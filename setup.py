@@ -22,7 +22,7 @@ setup(
     version=version,
     author='Elizabeth Tseng',
     author_email='etseng@pacb.com',
-    ext_modules = cythonize(ext_modules),
+    ext_modules = cythonize(ext_modules, language_level = "2"), #ext_modules = cythonize(ext_modules),
     include_dirs = [np.get_include()],
     zip_safe=False,
     packages = ['cupcake', 'cupcake.io', 'cupcake.ice',
@@ -37,7 +37,7 @@ setup(
         'bx-python>=0.7.3',
         'numpy',
         'bcbio-gff',
-        'sklearn',
+        'scikit-learn',#'sklearn',
         'pysam'
         ],
     scripts = ['cupcake/tofu/collapse_isoforms_by_sam.py',
